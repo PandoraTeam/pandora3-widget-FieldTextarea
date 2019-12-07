@@ -22,7 +22,7 @@ class FieldTextarea extends FormField {
 	protected function beforeRender(array $context): array {
 		$attribs = $context['attribs'] ?? '';
 		if ($context['placeholder'] ?? '') {
-			$attribs .= ' placeholder="'.$context['placeholder'].'"';
+			$attribs .= ' placeholder="'.htmlentities($context['placeholder']).'"';
 		}
 		$height = $context['height'] ?? '';
 		if ($height) {
