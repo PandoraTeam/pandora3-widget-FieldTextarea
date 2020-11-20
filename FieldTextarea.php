@@ -21,6 +21,9 @@ class FieldTextarea extends FormField {
 	 */
 	protected function beforeRender(array $context): array {
 		$attribs = $context['attribs'] ?? '';
+		if ($context['id'] ?? '') {
+			$attribs .= ' id="'.$context['id'].'"';
+		}
 		if ($context['placeholder'] ?? '') {
 			$attribs .= ' placeholder="'.htmlentities($context['placeholder']).'"';
 		}
